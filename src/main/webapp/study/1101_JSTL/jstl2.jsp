@@ -76,47 +76,46 @@
         <c:otherwise>${card},</c:otherwise>
       </c:choose>
     </c:forEach>
+    <br/><br/>
     -문제4: 구구단 연습...<br/>
     <h5>5단</h5>
     <c:forEach var="i" begin="1" end="9">
-    	5 * ${i} = ${5 * i}<br/>
+      5 * ${i} = ${5 * i}<br/>
     </c:forEach>
     <br/><br/>
     <h5>2~5단(이중For문)</h5>
     <c:forEach var="i" begin="2" end="5">
-    	* ${i} 단 *<br/>
-	    <c:forEach var="j" begin="1" end="9">
-	    	${i} * ${j} = ${i * j}<br/>
+      * ${i} 단 *<br/>
+    	<c:forEach var="j" begin="1" end="9">
+	      ${i} * ${j} = ${i * j}<br/>
 	    </c:forEach>
-    	<br/>
+	    <br/>
     </c:forEach>
   </p>
   <hr/>
   <h3>5장의 그림 출력하기(1줄에 3개의 그림씩 출력?)</h3>
   <c:forEach var="i" begin="1" end="5" varStatus="st">
   	<img src="${pageContext.request.contextPath}/images/${i}.jpg" width="100px" />
-  	<c:if test="${st.count % 3 == 0}"><br/></c:if>
+    <c:if test="${st.count % 3 == 0}"><br/></c:if>
   </c:forEach>
   <hr/>
-  <h3>2차원 배열 값의 처리</h3>
+  <h3>2차원배열값처리</h3>
 <%
-	String[][] sinsang = {
-			{"홍길동", "서울"},
-			{"김말숙", "서울"},
-			{"이기자", "인천"},
-			{"강감찬", "대전"},
-			{"고나무", "광주"}
-	};
-	pageContext.setAttribute("sinsang", sinsang);
+  String[][] sinsang = {
+  		{"홍길동","서울","23"},
+  		{"김말숙","청주","19"},
+  		{"이기자","인천","33"},
+  		{"소나무","제주","29"},
+  		{"오하늘","청주","42"}
+  };
+  pageContext.setAttribute("sinsang", sinsang);
 %>
-	<c:forEach var="sin" items="${sinsang}">
-		<c:forEach var="s" items="${sin}">
-			${s} / 
-		</c:forEach>
-		<br/>
-	</c:forEach>  
-  
-  <br/><br/>
+  <c:forEach var="sin" items="${sinsang}">
+  	<c:forEach var="s" items="${sin}">
+  		${s} /
+  	</c:forEach>
+  	<br/>
+  </c:forEach>
 </div>
 <p><br/></p>
 </body>

@@ -61,8 +61,8 @@
   <hr/>
   <h3>JSTL 제어문(core라이브러리와 el을 함께 활용)</h3>
   <p>사용법 : < c : if test="$ { 조건식  }" > 조건식에 처리할 내용 < / c : if ></p>
-  <div>단점1 : jstl의 숫자비교는 문자형식으로 비교한다.(해결:숫자형 문자변수 + 0)</div>
-  <div>단점2 : else문장이 없다.(배타적으로 비교한다. 또는 다중조건비교를 수행할 수 있다.)</div>
+  <div>단점1 : jstl의 숫자비교는 문자형식으로 비교한다.(해결:숫자형문자변수+0)</div>
+  <div>단점2 : else문장이 없다.(배타적으로 비교한다. 또는 다중조건비교를 수행할수 있다.)</div>
   <p>사용예(su3=300, su4=400)</p>
   <c:set var="su3" value="100" />
   <c:set var="su4" value="20" />
@@ -73,44 +73,43 @@
   <div>4. su3 < su4 : <c:if test="${su3 < su4}">su3는 su4보다 작다.</c:if> </div>
   <div>5. su3 > su4 : <c:if test="${su3+0 > su4+0}">su3는 su4보다 크다.</c:if> </div>
   <div>6. su3 < su4 : <c:if test="${su3+0 < su4+0}">su3는 su4보다 작다.</c:if> </div>
-  <div>7. su3 >= su4 : <c:if test="${su3+0 >= su4+0}">su3는 su4보다 크거나 같다.</c:if> </div>
-  <div>8. su3 <= su4 : <c:if test="${su3+0 <= su4+0}">su3는 su4보다 작거나 같다.</c:if> </div>
+  <div>7. su3 >= su4 : <c:if test="${su3+0 >= su4+0}">su3는 su4보다 크거나같다.</c:if> </div>
+  <div>8. su3 <= su4 : <c:if test="${su3+0 <= su4+0}">su3는 su4보다 작거나같다.</c:if> </div>
   <div>9. su3 gt su4 : <c:if test="${su3+0 gt su4+0}">su3는 su4보다 크다.</c:if> </div>
   <div>10. su3 lt su4 : <c:if test="${su3+0 lt su4+0}">su3는 su4보다 작다.</c:if> </div>
-  <div>11. su3 ge su4 : <c:if test="${su3+0 ge su4+0}">su3는 su4보다 크거나 같다.</c:if> </div>
-  <div>12. su3 le su4 : <c:if test="${su3+0 le su4+0}">su3는 su4보다 작거나 같다.</c:if> </div>
+  <div>11. su3 ge su4 : <c:if test="${su3+0 ge su4+0}">su3는 su4보다 크거나같다.</c:if> </div>
+  <div>12. su3 le su4 : <c:if test="${su3+0 le su4+0}">su3는 su4보다 작거나같다.</c:if> </div>
   
   <div>예제 : URL에 jumsu를 입력받아서 학점을 구하시오?</div>
   <div>
-  	<c:set var="jum" value="${param.jumsu}" />
-  	<c:if test="${jum+0 >= 60}"><c:set var="grade" value="D" /></c:if>
-  	<c:if test="${jum+0 >= 70}"><c:set var="grade" value="C" /></c:if>
-  	<c:if test="${jum+0 >= 80}"><c:set var="grade" value="B" /></c:if>
-  	<c:if test="${jum+0 >= 90}"><c:set var="grade" value="A" /></c:if>
-  	<c:if test="${jum+0 < 60}"><c:set var="grade" value="F" /></c:if>
-  	학점은 : ${grade}
+    <c:set var="jum" value="${param.jumsu}"/>
+    <c:if test="${jum+0 >= 60}"><c:set var="grade" value="D"/></c:if>
+    <c:if test="${jum+0 >= 70}"><c:set var="grade" value="C"/></c:if>
+    <c:if test="${jum+0 >= 80}"><c:set var="grade" value="B"/></c:if>
+    <c:if test="${jum+0 >= 90}"><c:set var="grade" value="A"/></c:if>
+    <c:if test="${jum+0 < 60}"><c:set var="grade" value="F"/></c:if>
+    학점은 : ${grade}
   </div>
-  <h3>다중조건비교 : choose ~ when</h3>  
+  <h3>다중조건비교 : choose ~ when</h3>
   <pre>
-  	사용법 : 
-  	< c : choose >
-  		< c : when test="조건식1">수행할 내용1< / c:when >
-  		< c : when test="조건식2">수행할 내용2< / c:when >
-  		< c : when test="조건식3">수행할 내용3< / c:when >
-  		< c : when test="조건식4">수행할 내용4< / c:when >
-  		
-  		< c : otherwise > 기타 수행할 내용< / :otherwise >
-  	< / c : choose >
+    사용법 :
+    < c : choose >
+      < c : when test="조건식1">수행할 내용1< / c:when >
+      < c : when test="조건식2">수행할 내용2< / c:when >
+      < c : when test="조건식3">수행할 내용3< / c:when >
+      < c : when test="조건식4">수행할 내용4< / c:when >
+      ~~~ ~~~ ~~~
+      < c : otherwise >기타 수행할 내용< / :otherwise >
+    < / c : choose >
   </pre>
   <div>학점은?
-  	<c:choose>
-  		<c:when test="${jum >= 90 }">A</c:when>
-  		<c:when test="${jum >= 80 }">B</c:when>
-  		<c:when test="${jum >= 70 }">C</c:when>
-  		<c:when test="${jum >= 60 }">D</c:when>
-  		
-  		<c:otherwise>F</c:otherwise>
-  	</c:choose>
+    <c:choose>
+      <c:when test="${jum >= 90}">A</c:when>
+      <c:when test="${jum >= 80}">B</c:when>
+      <c:when test="${jum >= 70}">C</c:when>
+      <c:when test="${jum >= 60}">D</c:when>
+      <c:otherwise>F</c:otherwise>
+    </c:choose>
   </div>
 </div>
 <p><br/></p>

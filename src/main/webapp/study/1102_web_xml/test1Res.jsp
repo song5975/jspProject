@@ -6,16 +6,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jstl5.jsp</title>
+  <title>test1Res.jsp</title>
   <jsp:include page="/include/bs4.jsp" />
 </head>
 <body>
 <p><br/></p>
 <div class="container">
-  <h2>회원 자료 출력하기</h2>
-  <form name="myform" method="post" action="${ctp}/j1101/jstl5Ok">
-  	<input type="submit" value="회원전체리스트" class="btn btn-success" />
-  </form>
+  <h2>test1Res.jsp 파일입니다.</h2>
+  <hr/>
+  <div>
+  	 메세지 : ${msg}
+  </div>
+  <hr/>
+  <div><a href="${ctp}/study/1102_web_xml/test1.jsp" class="btn btn-success">돌아가기</a></div>
+  <hr/>
 </div>
 <p><br/></p>
 </body>

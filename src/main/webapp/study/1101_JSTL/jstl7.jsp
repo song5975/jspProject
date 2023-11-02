@@ -43,6 +43,7 @@
     
     3.백분율<br/>
     0.98765 : <fmt:formatNumber value="0.98765" type="percent" /><br/>
+    0.98765 : <fmt:formatNumber value="0.98765" type="percent" pattern="0.0%" /><br/>
     <hr/>
     
     4.날짜<br/>
@@ -52,8 +53,20 @@
     오늘날짜3 : <fmt:formatDate value="${today}" pattern="yyyy-MM-dd" /><br/>
     오늘시간4 : <fmt:formatDate value="${today}" pattern="hh : mm : ss" /><br/>
     오늘시간5 : <fmt:formatDate value="${today}" pattern="yyyy년 MM월 dd일 hh시 mm분 ss초" /><br/>
+    <hr/>
+    
+    5.국가별설정(로케일)<br/>
+    톰캣서버의 기본 로케일 : <%=response.getLocale() %><br/>
+    톰캣서버의 기본 로케일변경(미국식) : <fmt:setLocale value="en_US"/>
+                                 <fmt:formatNumber value="${won1}" type="currency" /><br/>
+    <hr/>
+    
+    6.URL이동 : location.href = '';  => redirect   : core라이브러리에 존재함<br/>
+    <%-- <c:redirect url="jstl6.jsp" /> --%>
+    
+    7.import   : core라이브러리에 존재함<br/>
+    <c:import url="/include/bs4.jsp" />
   </div>
-  
 </div>
 <p><br/></p>
 </body>

@@ -41,8 +41,8 @@
   <p>주소 : ${vo.address}</p>
    --%>
   <hr/>
-  <h3>vos를 이용한 출력</h3>
-  <table class="table table-hover text-center">
+  <h3>vos 출력</h3>
+  <table class="table table-hover  text-center">
     <tr class="table-dark text-dark">
       <th>성명</th>
       <th>나이</th>
@@ -62,8 +62,8 @@
     <tr><td colspan="5" class="m-0 p-0"></td></tr>
   </table>
   <hr/><hr/>
-  <h3>함수를 이용한 출력</h3>
-  <table class="table table-hover text-center">
+  <h3>함수을 이용한 출력</h3>
+  <table class="table table-hover  text-center">
     <tr class="table-dark text-dark">
       <th>성명</th>
       <th>나이</th>
@@ -83,7 +83,6 @@
     <tr><td colspan="5" class="m-0 p-0"></td></tr>
   </table>
   <hr/>
-  
   <p><a href="${ctp}/study/1101_JSTL/jstl5.jsp" class="btn btn-success">돌아가기</a></p>
 </div>
 <p><br/></p>
